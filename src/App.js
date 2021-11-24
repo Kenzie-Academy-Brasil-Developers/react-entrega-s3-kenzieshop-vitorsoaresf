@@ -1,11 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
 import GlobalStyle from "./style/global";
+import Routes from "./routes";
 
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
+      <Routes />
     </div>
   );
 }
