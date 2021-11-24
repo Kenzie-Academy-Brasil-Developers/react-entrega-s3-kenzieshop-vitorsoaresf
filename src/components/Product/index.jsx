@@ -1,12 +1,16 @@
+import { Container } from "./styles";
+import Button from "../Button";
+
 const Product = ({ product }) => {
   const { title, description, image, price } = product;
   return (
-    <div>
+    <Container>
+      <img src={image} alt="image-product" />
       <h1>{title}</h1>
       <p>{description}</p>
-      <img src={image} alt="image-product" />
       <span>{price}</span>
-    </div>
+      <Button>Adiconar</Button>
+    </Container>
   );
 };
 
