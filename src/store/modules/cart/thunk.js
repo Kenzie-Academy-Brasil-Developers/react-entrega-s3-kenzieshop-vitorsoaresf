@@ -4,7 +4,7 @@ export const addCartThunk = (item) => {
   return (dispatch, getState) => {
     const { cart } = getState();
 
-    const updateCart = { ...cart, item };
+    const updateCart = [...cart, item];
 
     dispatch(addCart(updateCart));
   };

@@ -3,11 +3,11 @@ import { Container } from "./styles";
 import api from "../../services/api";
 import Product from "../Product";
 
-const ShowProducts = () => {
+const ShowProducts = ({ list }) => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    api.get("/products").then((response) => setProducts(response.data));
+    setProducts([...list]);
   }, []);
 
   return (
