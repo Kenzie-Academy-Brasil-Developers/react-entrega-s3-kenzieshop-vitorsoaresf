@@ -6,4 +6,5 @@ export const Container = styled.button`
   border: none;
   border-radius: 10px;
   margin: 10px 0;
+  cursor: pointer;
 `;
