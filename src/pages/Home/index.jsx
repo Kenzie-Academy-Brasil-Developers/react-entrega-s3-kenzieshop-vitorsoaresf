@@ -1,5 +1,11 @@
+import ShowProducts from "../../components/ShowProducts";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <ShowProducts />
+    </div>
+  );
 };
 
 export default Home;
