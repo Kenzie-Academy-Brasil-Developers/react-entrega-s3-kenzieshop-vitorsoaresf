@@ -21,7 +21,7 @@ export const Container = styled.header`
 
       span {
         position: absolute;
-        top: 1%;
+        top: 2%;
         background-color: red;
         border-radius: 100%;
         color: var(--white);
@@ -34,7 +34,7 @@ export const Container = styled.header`
 
     button + button {
       margin-left: 10px;
-      margin-right: 10px;
+      margin-right: 20px;
     }
   }
 

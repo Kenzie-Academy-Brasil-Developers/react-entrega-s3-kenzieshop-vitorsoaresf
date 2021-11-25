@@ -30,7 +30,9 @@ const Cart = () => {
             <span>{cart.length} Produtos</span>
             <h2>
               R$
-              {cart.reduce((acc, product) => (acc += product.price), 0)}
+              {cart
+                .reduce((acc, product) => (acc += product.price), 0)
+                .toFixed(2)}
             </h2>
           </div>
           <Button>Finalizar Pedido</Button>

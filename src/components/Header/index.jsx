@@ -16,7 +16,7 @@ const Header = () => {
           <FiShoppingCart />
           {numberItems.length > 0 && <span>{numberItems.length}</span>}
         </Button>
-        <Button>
+        <Button onClick={() => history.push("/")}>
           <FiLogOut />
         </Button>
       </div>
