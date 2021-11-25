@@ -6,6 +6,7 @@ export const addCartThunk = (item) => {
 
     const updateCart = [...cart, item];
 
+    localStorage.setItem("@cart", JSON.stringify(updateCart));
     dispatch(addCart(updateCart));
   };
 };
@@ -16,7 +17,7 @@ export const subCartThunk = (item) => {
     const { cart } = getState();
 
     const updateCart = cart.filter((products) => products.id !== item.id);
-
+    localStorage.setItem("@cart", JSON.stringify(updateCart));
     dispatch(subCart(updateCart));
   };
 };
