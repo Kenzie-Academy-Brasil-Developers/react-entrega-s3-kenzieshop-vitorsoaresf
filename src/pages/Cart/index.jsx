@@ -1,7 +1,8 @@
 import { useSelector } from "react-redux";
-import { Container } from "./styles";
+import { Container, ContainerCart, ContainerProducts } from "./styles";
 import Product from "../../components/Product";
 import { useEffect, useState } from "react";
+import Button from "../../components/Button";
 
 const Cart = () => {
   const [cart, setCart] = useState(JSON.parse(localStorage.getItem("@cart")));
@@ -14,10 +15,27 @@ const Cart = () => {
 
   return (
     <Container>
-      {cart &&
-        cart.map((product, index) => (
-          <Product isCart key={index} product={product} />
-        ))}
+      <ContainerProducts>
+        {cart &&
+          cart.map((product, index) => (
+            <Product isCart key={index} product={product} />
+          ))}
+      </ContainerProducts>
+      <ContainerCart>
+        <header>
+          <p> Resumo do pedido</p>
+        </header>
+        <section>
+          <div>
+            <span>{cart.length} Produtos</span>
+            <h2>
+              R$
+              {cart.reduce((acc, product) => (acc += product.price), 0)}
+            </h2>
+          </div>
+          <Button>Finalizar Pedido</Button>
+        </section>
+      </ContainerCart>
     </Container>
   );
 };
