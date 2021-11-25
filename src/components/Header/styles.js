@@ -18,6 +18,18 @@ export const Container = styled.header`
     button {
       width: 50px;
       font-size: 1rem;
+
+      span {
+        position: absolute;
+        top: 1%;
+        background-color: red;
+        border-radius: 100%;
+        color: var(--white);
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 1px 4px;
+        text-align: center;
+      }
     }
 
     button + button {

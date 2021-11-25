@@ -14,9 +14,10 @@ const Cart = () => {
 
   return (
     <Container>
-      {cart.map((product, index) => (
-        <Product isCart key={index} product={product} />
-      ))}
+      {cart &&
+        cart.map((product, index) => (
+          <Product isCart key={index} product={product} />
+        ))}
     </Container>
   );
 };
