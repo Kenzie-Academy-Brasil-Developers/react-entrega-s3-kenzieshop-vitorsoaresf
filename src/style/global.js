@@ -11,10 +11,11 @@ const GlobalStyle = createGlobalStyle`
     :root{
         --purple-50:#a29bfe;
         --purple-100:#6c5ce7;
-        --white: #f5f5f5;
+        --white: #fff;
         --green: #27ae60;
-        --grey-0: #ecf0f1;
-
+        --grey-100: #333333;
+        --grey-50: #999999;
+        --grey-0: #F5F5F5;
     }
 `;
 

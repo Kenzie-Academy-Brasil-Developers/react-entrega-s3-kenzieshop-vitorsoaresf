@@ -25,7 +25,7 @@ const Product = ({ product, isCart }) => {
           <img src={image} alt="image-product" />
           <h1>{title}</h1>
           <p>{description}</p>
-          <span>{price}</span>
+          <span>R$ {price}</span>
           <Button onClick={() => dispatch(addCartThunk(product))}>
             Adicionar
           </Button>{" "}
