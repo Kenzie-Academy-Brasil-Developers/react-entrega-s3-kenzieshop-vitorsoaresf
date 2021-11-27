@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { Container } from "./styles";
 import ShowProducts from "../../components/ShowProducts";
-import api from "../../services/api";
+import { useSelector, useDispatch } from "react-redux";
+import { getProductsThunk } from "../../store/modules/products/thunk";
 
 const Home = () => {
-  const [list, setList] = useState([]);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    api.get("/products").then((response) => setList(response.data));
+    dispatch(getProductsThunk());
   }, []);
+  const list = useSelector((state) => state.products);
 
   return (
     <Container>{list.length > 0 && <ShowProducts list={list} />}</Container>
