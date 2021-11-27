@@ -12,12 +12,13 @@ export const addCartThunk = (item) => {
 };
 
 export const subCartThunk = (item) => {
-  // console.log("item", item);
   return (dispatch, getState) => {
     const { cart } = getState();
 
     const updateCart = cart.filter((products) => products.id !== item.id);
+
     localStorage.setItem("@cart", JSON.stringify(updateCart));
+
     dispatch(subCart(updateCart));
   };
 };

@@ -5,9 +5,10 @@ import { useEffect, useState } from "react";
 import Button from "../../components/Button";
 
 const Cart = () => {
-  const [cart, setCart] = useState(JSON.parse(localStorage.getItem("@cart")));
-  console.log("aqui", cart);
+  const [cart, setCart] = useState([]);
+
   const cartUpdate = useSelector((state) => state.cart);
+  const cartLocalStorage = JSON.parse(localStorage.getItem("@cart")) || [];
 
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("@cart")));
@@ -27,10 +28,10 @@ const Cart = () => {
         </header>
         <section>
           <div>
-            <span>{cart.length} Produtos</span>
+            <span>{cartLocalStorage.length} Produtos</span>
             <h2>
               R$
-              {cart
+              {cartLocalStorage
                 .reduce((acc, product) => (acc += product.price), 0)
                 .toFixed(2)}
             </h2>

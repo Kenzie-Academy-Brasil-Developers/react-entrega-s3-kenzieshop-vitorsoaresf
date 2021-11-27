@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
 import { Container } from "./styles";
-import api from "../../services/api";
 import Product from "../Product";
+import { useSelector } from "react-redux";
 
-const ShowProducts = ({ list }) => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    setProducts([...list]);
-  }, []);
+const ShowProducts = () => {
+  const products = useSelector((state) => state.products);
 
   return (
     <Container>

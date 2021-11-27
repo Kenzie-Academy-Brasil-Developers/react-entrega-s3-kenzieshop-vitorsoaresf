@@ -3,10 +3,16 @@ import { FiLogOut, FiShoppingCart } from "react-icons/fi";
 import { useHistory } from "react-router";
 import { useSelector } from "react-redux";
 import Button from "../Button";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const history = useHistory();
-  const numberItems = useSelector((state) => state.cart);
+  const [numberItems, setNumberItems] = useState([]);
+  const cart = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    setNumberItems(JSON.parse(localStorage.getItem("@cart")));
+  }, [cart]);
 
   return (
     <Container>
@@ -14,7 +20,7 @@ const Header = () => {
       <div>
         <Button onClick={() => history.push("/cart")}>
           <FiShoppingCart />
-          {numberItems.length > 0 && <span>{numberItems.length}</span>}
+          {numberItems && <span>{numberItems.length}</span>}
         </Button>
         <Button onClick={() => history.push("/")}>
           <FiLogOut />
